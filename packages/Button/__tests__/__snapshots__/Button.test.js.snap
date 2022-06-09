@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render empty button correctly 1`] = `
+<Button
+  as="button"
+  disabled={false}
+  size="base"
+  variant="default"
+  width="auto"
+/>
+`;

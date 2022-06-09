@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid should render empty grid correctly 1`] = `
+<Grid
+  areas="none"
+  as="div"
+  autoColumns="auto"
+  autoFlow="row"
+  autoRows="auto"
+  bgColor="transparent"
+  columnGap="20px"
+  columns="none"
+  height="auto"
+  lg={Object {}}
+  md={Object {}}
+  rowGap="20px"
+  rows="auto auto"
+  sm={Object {}}
+  xl={Object {}}
+  xs={Object {}}
+/>
+`;
