@@ -97,18 +97,22 @@ const Button = (props) => {
 
         .button.sm {
           padding: 7px 28px;
+          font-size: ${theme.fontSizes.sm};
         }
 
         .button.md {
           padding: 10px 38px;
+          font-size: ${theme.fontSizes.md};
         }
 
         .button.lg {
           padding: 18px 52px;
+          font-size: ${theme.fontSizes.lg};
         }
 
         .button.xl {
           padding: 26px 70px;
+          font-size: ${theme.fontSizes.xl};
         }
 
         .button.default {

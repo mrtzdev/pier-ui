@@ -10,7 +10,7 @@ export const useTheme = () => {
   return theme;
 };
 
-export function UiProvider(props) {
+export default function UiProvider(props) {
   const customTheme = useTheme();
   const theme = customTheme ? customTheme : defaultTheme;
 
