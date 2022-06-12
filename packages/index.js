@@ -6,6 +6,7 @@ export { default as UiProvider } from "./UiProvider";
 
 export { default as Button } from "./Button";
 export { default as Container } from "./Container";
+export { default as Card } from "./Card";
 export { default as DropdownSelect } from "./DropdownSelect";
 export { default as Grid } from "./Grid";
 export { default as Input } from "./Input";

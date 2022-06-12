@@ -31,11 +31,10 @@ const Container = (props) => {
           width: 100%;
           margin: 0 auto;
           position: relative;
-          ${
-            maxWidth
-              ? "max-width:" + maxWidth
-              : "max-width:" + theme.maxWidth.lg
-          };
+          ${maxWidth
+            ? "max-width:" + maxWidth
+            : "max-width:" + theme.maxWidth.lg};
+        }
       `}</style>
     </>
   );

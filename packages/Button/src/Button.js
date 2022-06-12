@@ -87,12 +87,13 @@ const Button = (props) => {
           padding: 10px 38px;
           width: ${width};
           display: inline-block;
-          cursor: pointer;
           transition: background-color ${theme.transitions.base};
           font-size: ${theme.fontSizes.base};
           text-align: center;
+          text-decoration: none;
           border-radius: ${theme.borderRadius.base};
           pointer-events: ${disabled ? "none" : "auto"};
+          cursor: ${disabled ? "not-allowed" : "pointer"};
         }
 
         .button.sm {
