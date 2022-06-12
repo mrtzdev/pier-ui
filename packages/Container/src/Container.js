@@ -1,5 +1,5 @@
+import classNames from "classnames";
 import PropTypes from "prop-types";
-
 import defaultTheme from "../../Theme/theme";
 import { useTheme } from "../../UiProvider";
 
@@ -23,7 +23,7 @@ const Container = (props) => {
 
   return (
     <>
-      <Component className={`container ${className ? className : ""}`}>
+      <Component className={classNames("container", className)}>
         {children}
       </Component>
       <style jsx>{`
