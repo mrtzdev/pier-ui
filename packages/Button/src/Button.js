@@ -1,3 +1,5 @@
+import React, { forwardRef } from "react";
+
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import defaultTheme from "../../Theme/theme";
@@ -30,7 +32,7 @@ const defaultProps = {
   as: "button",
 };
 
-const Button = (props) => {
+const Button = forwardRef((props, ref) => {
   const {
     variant,
     className,
@@ -58,6 +60,7 @@ const Button = (props) => {
           disabled && `${disabled}`
         )}
         disabled={as === "button" && disabled ? true : false} /// ad disabled attr only to button
+        ref={ref}
       >
         {children}
       </Component>
@@ -196,7 +199,7 @@ const Button = (props) => {
       `}</style>
     </>
   );
-};
+});
 
 export default Button;
 

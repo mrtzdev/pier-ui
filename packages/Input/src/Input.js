@@ -1,3 +1,4 @@
+import React, { forwardRef } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
@@ -36,7 +37,7 @@ const defaultProps = {
   floatingLabel: false,
 };
 
-const Input = (props) => {
+const Input = forwardRef((props, ref) => {
   const {
     value,
     onChange,
@@ -102,6 +103,7 @@ const Input = (props) => {
           required={required ? true : false}
           readOnly={readOnly ? true : false}
           autoComplete={autoComplete}
+          ref={ref}
           {...restProps}
         />
         {floatingLabel && label ? (
@@ -255,7 +257,7 @@ const Input = (props) => {
       `}</style>
     </>
   );
-};
+});
 
 export default Input;
 
