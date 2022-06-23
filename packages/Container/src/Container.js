@@ -23,7 +23,7 @@ const Container = (props) => {
 
   return (
     <>
-      <Component className={classNames("container", className)}>
+      <Component className={classNames("container", className)} {...restProps}>
         {children}
       </Component>
       <style jsx>{`
