@@ -5,30 +5,25 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import Button from "../index";
+import Checkbox from "../index";
 
-describe("Button", () => {
-  it("should render button correctly", () => {
-    render(<Button>Button</Button>);
-    screen.debug();
+describe("Checkbox", () => {
+  it("should render Input correctly", () => {
+    render(<Checkbox />);
+    // screen.debug();
   });
 
-  it("Renders with a className equal to the variant", () => {
-    const { container } = render(<Button variant="primary" />);
-    expect(container.firstChild).toHaveClass("primary");
-  });
+  it("Renders with a attribute required", () => {
+    render(<Checkbox label="required" required />);
+    const inputNode = screen.getByLabelText("required", { selector: "input" });
 
-  it("Renders with a className equal to the size", () => {
-    const { container } = render(<Button size="xl" />);
-    expect(container.firstChild).toHaveClass("xl");
+    expect(inputNode).toBeRequired();
   });
 
   it("Renders with a attribute disabled", () => {
-    const { container } = render(<Button disabled />);
-    expect(container.firstChild).toBeDisabled();
-  });
+    render(<Checkbox label="disabled" disabled />);
+    const inputNode = screen.getByLabelText("disabled", { selector: "input" });
 
-  it("should render empty button correctly", () => {
-    expect(<Button />).toMatchSnapshot();
+    expect(inputNode).toBeDisabled();
   });
 });

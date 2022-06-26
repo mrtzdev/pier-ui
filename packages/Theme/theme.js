@@ -26,7 +26,7 @@ const theme = {
 
   borderRadius: {
     base: "10px",
-    xs: "7px",
+    xs: "6px",
     sm: "9px",
     md: "12px",
     lg: "14px",

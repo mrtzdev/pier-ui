@@ -9,6 +9,10 @@ const propTypes = {
   label: PropTypes.string,
   className: PropTypes.string,
   size: PropTypes.oneOf(["base", "sm", "md", "lg", "xl"]),
+  disabled: PropTypes.bool,
+  required: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  color: PropTypes.string,
 };
 
 const defaultProps = {
@@ -17,9 +21,28 @@ const defaultProps = {
   as: "div",
 };
 
+const CheckIcon = (props) => {
+  const { color } = props;
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="15"
+      height="12"
+      fill="none"
+      viewBox="0 0 15 12"
+    >
+      <path
+        fill={color}
+        d="M5.6 11.3L.5 6l2-1.9 3.1 3.3L13 0l2 2-9.4 9.3z"
+      ></path>
+    </svg>
+  );
+};
+
 const Checkbox = forwardRef((props, ref) => {
   const {
     variant,
+    color,
     className,
     size,
     width,
@@ -48,8 +71,16 @@ const Checkbox = forwardRef((props, ref) => {
 
   return (
     <>
-      <Component>
-        <label>
+      <Component
+        className={classNames(
+          "wrap-checkbox",
+          variant && `wrap-${variant}`,
+          size && `wrap-${size}`,
+          disabled && `wrap-disabled`,
+          required && `wrap-required`
+        )}
+      >
+        <label className="checkbox-label">
           <input
             className="checkbox-input"
             type="checkbox"
@@ -62,19 +93,44 @@ const Checkbox = forwardRef((props, ref) => {
                 })}
             value={value}
             defaultChecked={defaultChecked ? true : false}
+            disabled={disabled ? true : false}
+            required={required ? true : false}
             {...restProps}
           />
           <span
-            className={`checkbox ${isChecked ? "checkbox--active" : ""} ${
-              isCheckedUncontrolled ? "checkbox--active" : ""
+            className={`checkbox ${isChecked ? "checkbox--checked" : ""} ${
+              isCheckedUncontrolled ? "checkbox--checked" : ""
             } `}
             aria-hidden="true"
-          />
-          Don't you dare to check me!
+          >
+            <div className="checkbox-icon">
+              {isChecked ? <CheckIcon color={color ? color : "#000"} /> : ""}
+              {isCheckedUncontrolled ? (
+                <CheckIcon color={color ? color : "#000"} />
+              ) : (
+                ""
+              )}
+            </div>
+          </span>
+          <span className="checkbox-label-text">{label} </span>
         </label>
       </Component>
 
       <style jsx>{`
+        .wrap-checkbox {
+          user-select: none;
+          position: relative;
+          display: inline-block;
+        }
+        .wrap-disabled {
+          cursor: not-allowed;
+        }
+
+        .wrap-disabled label {
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+
         .checkbox-input[type="checkbox"] {
           clip: rect(0 0 0 0);
           clip-path: inset(50%);
@@ -86,17 +142,37 @@ const Checkbox = forwardRef((props, ref) => {
         }
 
         .checkbox {
+          position: relative;
           display: inline-block;
           height: 20px;
           width: 20px;
           background: #fff;
-          border: 2px #ddd solid;
-          margin-right: 4px;
+          border-radius: ${theme.borderRadius.xs};
+          ${color
+            ? "border: 1px solid" + color
+            : "border: 1px solid" + theme.colors.grey};
         }
 
-        .checkbox--active {
-          border-color: purple;
-          background: purple;
+        .checkbox--checked {
+        }
+
+        .checkbox-icon {
+          position: absolute;
+          padding: 1px;
+          color: #eee;
+        }
+
+        .checkbox-label {
+          display: inline-flex;
+          justify-content: flex-start;
+          align-items: center;
+          position: relative;
+          width: auto;
+          cursor: pointer;
+        }
+
+        .checkbox-label-text {
+          padding-left: 8px;
         }
       `}</style>
     </>
