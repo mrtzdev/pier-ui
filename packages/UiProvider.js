@@ -22,8 +22,8 @@ export default function UiProvider(props) {
       </style>
       <style jsx global>{`
         body {
-          font-family: ${theme.fontFamily.sansSerif};
-          font-size: ${theme.fontSizes.base};
+          font-family: ${props.theme.fontFamily.sansSerif};
+          font-size: ${props.theme.fontSizes.base};
         }
       `}</style>
     </ThemeContext.Provider>

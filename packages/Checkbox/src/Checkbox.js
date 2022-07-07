@@ -13,6 +13,7 @@ const propTypes = {
   required: PropTypes.bool,
   readOnly: PropTypes.bool,
   color: PropTypes.string,
+  isChecked: PropTypes.bool,
 };
 
 const defaultProps = {

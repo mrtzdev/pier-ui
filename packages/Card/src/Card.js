@@ -38,9 +38,8 @@ const Card = (props) => {
           border-radius: ${theme.borderRadius.base};
           min-height: 100px;
           ${maxWidth ? "max-width:" + maxWidth : "max-width:" + "none"};
-          
         }
-        }
+
         .card.flat {
           background-color: ${theme.colors.greyLight};
           border: 1px solid ${theme.colors.greyLight};
