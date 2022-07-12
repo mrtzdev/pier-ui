@@ -4,7 +4,6 @@ import DropdownSelectSingle from "./DropdownSelectSingle";
 import DropdownSelectMultiple from "./DropdownSelectMultiple";
 
 const propTypes = {
-  //value: PropTypes.object.isRequired,
   options: PropTypes.array.isRequired,
   className: PropTypes.string,
   width: PropTypes.string,
