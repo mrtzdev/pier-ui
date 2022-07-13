@@ -30,6 +30,13 @@ describe("Checkbox", () => {
     expect(inputNode).toBeDisabled();
   });
 
+  it("Renders with label", () => {
+    const { container } = render(<Checkbox label="testlabel" />);
+    const label = screen.getByText(/testLabel/i);
+
+    expect(container).toContainElement(label);
+  });
+
   it("should not have accessibility violations", async () => {
     const { container } = render(<Checkbox label="test label" />);
 

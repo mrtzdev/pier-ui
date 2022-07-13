@@ -8,7 +8,7 @@ import { useTheme } from "../../UiProvider";
 const propTypes = {
   label: PropTypes.string,
   className: PropTypes.string,
-  size: PropTypes.oneOf(["base", "sm", "md", "lg", "xl"]),
+  size: PropTypes.oneOf(["base", "sm", "md", "lg"]),
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   readOnly: PropTypes.bool,
@@ -20,24 +20,6 @@ const defaultProps = {
   size: "base",
   disabled: false,
   as: "div",
-};
-
-const CheckIcon = (props) => {
-  const { color } = props;
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="15"
-      height="12"
-      fill="none"
-      viewBox="0 0 15 12"
-    >
-      <path
-        fill={color}
-        d="M5.6 11.3L.5 6l2-1.9 3.1 3.3L13 0l2 2-9.4 9.3z"
-      ></path>
-    </svg>
-  );
 };
 
 const Radio = forwardRef((props, ref) => {
@@ -93,9 +75,10 @@ const Radio = forwardRef((props, ref) => {
                   },
                 })}
             value={value}
-            defaultChecked={defaultChecked ? true : false}
+            {...(defaultChecked ? { defaultChecked } : {})}
             disabled={disabled ? true : false}
             required={required ? true : false}
+            ref={ref}
             {...restProps}
           />
           <span
@@ -112,7 +95,7 @@ const Radio = forwardRef((props, ref) => {
         .wrap-radio {
           user-select: none;
           position: relative;
-          display: inline-block;
+          display: block;
         }
         .wrap-disabled {
           cursor: not-allowed;
@@ -155,10 +138,6 @@ const Radio = forwardRef((props, ref) => {
           width: 50%;
           height: 50%;
           border-radius: 50%;
-
-          ${color
-            ? "border: 1px solid" + color
-            : "border: 1px solid" + theme.colors.grey};
         }
 
         .radio.radio--checked:before {
@@ -174,10 +153,12 @@ const Radio = forwardRef((props, ref) => {
           position: relative;
           width: auto;
           cursor: pointer;
+          margin-bottom: 8px;
         }
 
         .radio-label-text {
           padding-left: 8px;
+          padding-right: 12px;
         }
       `}</style>
     </>

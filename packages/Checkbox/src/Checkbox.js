@@ -8,7 +8,7 @@ import { useTheme } from "../../UiProvider";
 const propTypes = {
   label: PropTypes.string,
   className: PropTypes.string,
-  size: PropTypes.oneOf(["base", "sm", "md", "lg", "xl"]),
+  size: PropTypes.oneOf(["base", "sm", "md", "lg"]),
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   readOnly: PropTypes.bool,
@@ -80,6 +80,7 @@ const Checkbox = forwardRef((props, ref) => {
           disabled && `wrap-disabled`,
           required && `wrap-required`
         )}
+        ref={ref}
       >
         <label className="checkbox-label">
           <input
