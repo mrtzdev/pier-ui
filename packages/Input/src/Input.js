@@ -6,7 +6,7 @@ import defaultTheme from "../../Theme/theme";
 import { useTheme } from "../../UiProvider";
 
 const propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.string, /// only string ????
   label: PropTypes.string,
   labelFor: PropTypes.string,
   floatingLabel: PropTypes.bool,

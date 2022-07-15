@@ -14,6 +14,7 @@ const propTypes = {
   readOnly: PropTypes.bool,
   color: PropTypes.string,
   isChecked: PropTypes.bool,
+  as: PropTypes.string,
 };
 
 const defaultProps = {

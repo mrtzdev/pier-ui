@@ -13,7 +13,7 @@ const theme = {
     h1: "32px",
     h2: "28px",
     h3: "22px",
-    h4: "22px",
+    h4: "20px",
   },
 
   lineHeights: {
