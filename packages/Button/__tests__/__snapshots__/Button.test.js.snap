@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should render empty button correctly 1`] = `
-<ForwardRef
+<Button
   as="button"
   disabled={false}
   size="base"

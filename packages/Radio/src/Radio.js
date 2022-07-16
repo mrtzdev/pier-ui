@@ -66,6 +66,7 @@ const Radio = forwardRef((props, ref) => {
           disabled && `wrap-disabled`,
           required && `wrap-required`
         )}
+        {...restProps}
       >
         <label className="radio-label">
           <input
@@ -83,7 +84,6 @@ const Radio = forwardRef((props, ref) => {
             disabled={disabled ? true : false}
             required={required ? true : false}
             ref={ref}
-            {...restProps}
           />
           <span
             className={`radio ${isChecked ? "radio--checked" : ""} ${

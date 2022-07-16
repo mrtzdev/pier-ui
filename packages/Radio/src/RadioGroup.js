@@ -1,13 +1,15 @@
-import React, { useEffect, useMemo, useRef, forwardRef, useState } from "react";
+import React, { useEffect, useRef, forwardRef, useState } from "react";
 
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import defaultTheme from "../../Theme/theme";
-import { useTheme } from "../../PierUIProvider";
 
 const propTypes = {
   orientation: PropTypes.string,
   className: PropTypes.string,
+  children: PropTypes.any,
+  onChange: PropTypes.func,
+  as: PropTypes.string,
+  value: PropTypes.any,
 };
 
 const defaultProps = {
@@ -26,11 +28,6 @@ const RadioGroup = forwardRef((props, ref) => {
     ...restProps
   } = props;
   const Component = as;
-
-  const customTheme = useTheme();
-  const theme = customTheme ? customTheme : defaultTheme;
-
-  const [isChecked, setIsChecked] = useState(false);
   const [selected, setSelected] = useState("");
 
   const childrenRef = useRef([]);
@@ -45,7 +42,11 @@ const RadioGroup = forwardRef((props, ref) => {
 
   return (
     <>
-      <Component className={classNames("wrap-radio-group")} {...restProps}>
+      <Component
+        className={classNames(className, "wrap-radio-group")}
+        ref={ref}
+        {...restProps}
+      >
         {React.Children.map(children, (childElement, index) =>
           React.cloneElement(childElement, {
             ref: (ref) => (childrenRef.current[index] = ref),
@@ -72,5 +73,6 @@ const RadioGroup = forwardRef((props, ref) => {
 
 export default RadioGroup;
 
+RadioGroup.displayName = "RadioGroup";
 RadioGroup.propTypes = propTypes;
 RadioGroup.defaultProps = defaultProps;
