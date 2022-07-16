@@ -19,6 +19,11 @@ export default {
       file: "dist/esm/index.js",
       format: "esm",
     },
+    {
+      file: "dist/umd/pear-ui.min.js",
+      format: "umd",
+      name: "bundle",
+    },
   ],
   external: Object.keys(pkg.peerDependencies),
   plugins: [
