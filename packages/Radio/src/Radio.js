@@ -3,7 +3,7 @@ import React, { forwardRef, useState } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import defaultTheme from "../../Theme/theme";
-import { useTheme } from "../../UiProvider";
+import { useTheme } from "../../PierUIProvider";
 
 const propTypes = {
   label: PropTypes.string,

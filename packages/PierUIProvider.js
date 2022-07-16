@@ -10,7 +10,7 @@ export const useTheme = () => {
   return theme;
 };
 
-export default function UiProvider(props) {
+export default function PierUIProvider(props) {
   const customTheme = useTheme();
   const theme = customTheme ? customTheme : defaultTheme;
 
@@ -22,8 +22,12 @@ export default function UiProvider(props) {
       </style>
       <style jsx global>{`
         body {
-          font-family: ${props.theme.fontFamily.sansSerif};
-          font-size: ${props.theme.fontSizes.base};
+          ${props.theme
+            ? "font-family:" + props.theme.fontFamily.sansSerif
+            : "font-family:" + theme.fontFamily.sansSerif};
+          ${props.theme
+            ? "font-size:" + props.theme.fontSizes.base
+            : "font-size:" + theme.fontSizes.base};
         }
       `}</style>
     </ThemeContext.Provider>

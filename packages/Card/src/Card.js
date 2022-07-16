@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import defaultTheme from "../../Theme/theme";
-import { useTheme } from "../../UiProvider";
+import { useTheme } from "../../PierUIProvider";
 
 const propTypes = {
   variant: PropTypes.oneOf(["flat", "outlined", "shadow"]),

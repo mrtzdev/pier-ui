@@ -12,11 +12,11 @@ export default {
   input: "packages/index.js",
   output: [
     {
-      file: "dist/cjs/index-cjs.js",
+      file: "dist/cjs/index.js",
       format: "cjs",
     },
     {
-      file: "dist/esm/index-esm.js",
+      file: "dist/esm/index.js",
       format: "esm",
     },
   ],

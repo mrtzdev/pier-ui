@@ -1,6 +1,6 @@
 /// UI Privuder
 
-export { default as UiProvider } from "./UiProvider";
+export { default as PierUIProvider } from "./PierUIProvider";
 
 /// Components
 
