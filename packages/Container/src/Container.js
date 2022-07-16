@@ -1,3 +1,4 @@
+import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import defaultTheme from "../../Theme/theme";
@@ -42,5 +43,6 @@ const Container = (props) => {
 
 export default Container;
 
+Container.displayName = "Container";
 Container.propTypes = propTypes;
 Container.defaultProps = defaultProps;

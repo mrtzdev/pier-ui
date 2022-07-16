@@ -22,6 +22,8 @@ const propTypes = {
   focusColor: PropTypes.string,
   children: PropTypes.any,
   onChange: PropTypes.func,
+  type: PropTypes.string,
+  value: PropTypes.any,
 };
 
 const defaultProps = {
@@ -260,5 +262,6 @@ const Input = forwardRef((props, ref) => {
 
 export default Input;
 
+Input.displayName = "Input";
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;

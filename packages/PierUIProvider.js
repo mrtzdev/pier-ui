@@ -1,9 +1,9 @@
-import theme from "./Theme/theme";
+import defaultTheme from "./Theme/theme";
 import globalStyles from "./Theme/global";
 
 import React, { useContext } from "react";
 
-export const ThemeContext = React.createContext(theme);
+export const ThemeContext = React.createContext(defaultTheme);
 
 export const useTheme = () => {
   const theme = useContext(ThemeContext);

@@ -15,6 +15,10 @@ const propTypes = {
   color: PropTypes.string,
   isChecked: PropTypes.bool,
   as: PropTypes.string,
+  defaultChecked: PropTypes.bool,
+  value: PropTypes.any,
+  variant: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -29,11 +33,9 @@ const Radio = forwardRef((props, ref) => {
     color,
     className,
     size,
-    width,
     disabled,
     required,
     as,
-    children,
     onChange,
     value,
     label,
@@ -58,6 +60,7 @@ const Radio = forwardRef((props, ref) => {
       <Component
         className={classNames(
           "wrap-radio",
+          className,
           variant && `wrap-${variant}`,
           size && `wrap-${size}`,
           disabled && `wrap-disabled`,
@@ -168,5 +171,6 @@ const Radio = forwardRef((props, ref) => {
 
 export default Radio;
 
+Radio.displayName = "Radio";
 Radio.propTypes = propTypes;
 Radio.defaultProps = defaultProps;

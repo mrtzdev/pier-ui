@@ -54,7 +54,6 @@ const defaultProps = {
 const DropdownSelectMultiple = (props) => {
   const {
     className,
-    list,
     options,
     value,
     label,
@@ -70,7 +69,6 @@ const DropdownSelectMultiple = (props) => {
     focusColor,
     size,
     children,
-    multiple,
     ...restProps
   } = props;
 

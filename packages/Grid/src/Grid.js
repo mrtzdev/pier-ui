@@ -1,3 +1,4 @@
+import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
@@ -21,6 +22,7 @@ const propTypes = {
   as: PropTypes.string,
   children: PropTypes.any,
   columns: PropTypes.string,
+  columnGap: PropTypes.string,
   autoColumns: PropTypes.string,
   rows: PropTypes.string,
   rowGap: PropTypes.string,
@@ -97,6 +99,7 @@ const Grid = (props) => {
           md && !isEmptyObject(xl) && `grid-xl`,
           bgColor && `bg-color`
         )}
+        {...restProps}
       >
         {children}
       </Component>

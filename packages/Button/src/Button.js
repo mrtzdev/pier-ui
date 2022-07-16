@@ -203,5 +203,6 @@ const Button = forwardRef((props, ref) => {
 
 export default Button;
 
+Button.displayName = "Button";
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;

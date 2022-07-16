@@ -9,11 +9,16 @@ const propTypes = {
   label: PropTypes.string,
   className: PropTypes.string,
   size: PropTypes.oneOf(["base", "sm", "md", "lg"]),
+  defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   readOnly: PropTypes.bool,
   color: PropTypes.string,
   isChecked: PropTypes.bool,
+  as: PropTypes.string,
+  value: PropTypes.string,
+  variant: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -46,11 +51,9 @@ const Checkbox = forwardRef((props, ref) => {
     color,
     className,
     size,
-    width,
     disabled,
     required,
     as,
-    children,
     onChange,
     value,
     label,
@@ -75,6 +78,7 @@ const Checkbox = forwardRef((props, ref) => {
       <Component
         className={classNames(
           "wrap-checkbox",
+          className,
           variant && `wrap-${variant}`,
           size && `wrap-${size}`,
           disabled && `wrap-disabled`,
@@ -183,5 +187,6 @@ const Checkbox = forwardRef((props, ref) => {
 
 export default Checkbox;
 
+Checkbox.displayName = "Checkbox";
 Checkbox.propTypes = propTypes;
 Checkbox.defaultProps = defaultProps;

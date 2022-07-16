@@ -1,3 +1,4 @@
+import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import defaultTheme from "../../Theme/theme";
@@ -57,5 +58,6 @@ const Card = (props) => {
 
 export default Card;
 
+Card.displayName = "Card";
 Card.propTypes = propTypes;
 Card.defaultProps = defaultProps;
