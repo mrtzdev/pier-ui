@@ -1,7 +1,6 @@
-<p align="center">
+<p>
   <a href="https://pier-ui-docs.vercel.app">
-      <img width="20%" src="https://pier-ui-docs.vercel.app/_next/static/media/pier-logo.6038639a.png" alt="Pier UI" />
-     
+      <img width="35%" src="https://pier-ui-docs.vercel.app/_next/static/media/pier-logo.6038639a.png" alt="Pier UI" />
   </a>
 </p>
 </br>
