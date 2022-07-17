@@ -40,7 +40,7 @@ export default {
     env === "production" && terser(),
 
     copy({
-      targets: [{ src: "packages/*", dest: "dist/lib" }],
+      targets: [{ src: "packages/*", dest: "lib" }],
     }),
   ],
 };
