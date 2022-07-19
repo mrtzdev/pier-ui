@@ -118,14 +118,14 @@ If you use pier-ui as a node module in your Next.js project, you have to install
 Or copy the untranspiled source files to your project for example ./components/lib/ and import:
 
 ```js
-import { PierUIProvider } from "./components/lib/";
+import { PierUIProvider } from "./components/lib";
 ```
 
-### Usage with Create React App
+## Usage with Create React App
 
 Create React App comes with babel-plugin-macros already installed, so the only thing that needs to be done is to install styled-jsx.
 
-### Usage with Rollup
+## Usage with Rollup
 
 Coming Soon.
 
