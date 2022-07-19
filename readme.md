@@ -42,8 +42,7 @@ function App() {
 }
 ```
 
-<br />
-## Advanced Setup ( recommanded )
+## Advanced Setup
 
 If you want to use pier-ui as a starter UI and build your own components, use the untranspiled source files ( pier-ui/lib ) or simple copy the untranspiled source files in your project and configure styled-jsx:
 
@@ -71,7 +70,6 @@ function App() {
 }
 ```
 
-<br />
 ## Configure styled-jsx
 
 To use pier-ui with styled-jsx, you have to add styled-jsx/babel to plugins in your babel configuration:
@@ -84,7 +82,6 @@ To use pier-ui with styled-jsx, you have to add styled-jsx/babel to plugins in y
 
 See the styled-jsx Docs here: [styled-jsx docs](https://github.com/vercel/styled-jsx/blob/main/readme.md#getting-started")
 
-<br />
 ## Usage with Next.js
 
 Next.js automatically configures styled-jsx with babel, you don't have to configure it manually. In your Next.js , run the following:
