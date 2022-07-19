@@ -13,6 +13,7 @@
   },
   "author": "mrtzdev",
   "license": "MIT License",
+  "description": "A customizable UI library for React and Next Applications.",
   "homepage": "https://pier-ui-docs.vercel.app",
   "repository": {
     "type": "git",
