@@ -1,5 +1,6 @@
 import defaultTheme from "./Theme/theme";
 import globalStyles from "./Theme/global";
+import PropTypes from "prop-types";
 
 import React, { useContext } from "react";
 
@@ -8,6 +9,11 @@ export const ThemeContext = React.createContext(defaultTheme);
 export const useTheme = () => {
   const theme = useContext(ThemeContext);
   return theme;
+};
+
+const propTypes = {
+  theme: PropTypes.object,
+  children: PropTypes.any,
 };
 
 export default function PierUIProvider(props) {
@@ -33,3 +39,6 @@ export default function PierUIProvider(props) {
     </ThemeContext.Provider>
   );
 }
+
+PierUIProvider.displayName = "Button";
+PierUIProvider.propTypes = propTypes;
