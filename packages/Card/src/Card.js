@@ -45,8 +45,6 @@ const Card = (props) => {
         .card {
           width: 100%;
           position: relative;
-          border-radius: ${theme.borderRadius.base};
-
           min-height: 100px;
           overflow: hidden;
           ${maxWidth ? "max-width:" + maxWidth : "max-width:" + "none"};
