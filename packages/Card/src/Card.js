@@ -10,6 +10,7 @@ const propTypes = {
   as: PropTypes.string,
   children: PropTypes.any,
   maxWidth: PropTypes.string,
+  borderRadius: PropTypes.string,
 };
 
 const defaultProps = {
@@ -18,7 +19,15 @@ const defaultProps = {
 };
 
 const Card = (props) => {
-  const { variant, className, maxWidth, as, children, ...restProps } = props;
+  const {
+    variant,
+    className,
+    maxWidth,
+    borderRadius,
+    as,
+    children,
+    ...restProps
+  } = props;
   const Component = as;
 
   const customTheme = useTheme();
@@ -37,8 +46,13 @@ const Card = (props) => {
           width: 100%;
           position: relative;
           border-radius: ${theme.borderRadius.base};
+
           min-height: 100px;
+          overflow: hidden;
           ${maxWidth ? "max-width:" + maxWidth : "max-width:" + "none"};
+          ${borderRadius
+            ? "border-radius:" + borderRadius
+            : "border-radius:" + theme.borderRadius.base};
         }
 
         .card.flat {

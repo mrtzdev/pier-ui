@@ -10,13 +10,14 @@ const theme = {
     md: "16px",
     lg: "22px",
     xl: "28px",
-    h1: "32px",
+    h1: "42px",
     h2: "28px",
     h3: "22px",
     h4: "20px",
   },
 
   lineHeights: {
+    base: 1.5,
     xs: 1,
     sm: 1.25,
     md: 1.5,

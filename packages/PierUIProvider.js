@@ -35,6 +35,30 @@ export default function PierUIProvider(props) {
             ? "font-size:" + props.theme.fontSizes.base
             : "font-size:" + theme.fontSizes.base};
         }
+
+        h1 {
+          ${props.theme
+            ? "font-size:" + props.theme.fontSizes.h1
+            : "font-size:" + theme.fontSizes.h1};
+        }
+
+        h2 {
+          ${props.theme
+            ? "font-size:" + props.theme.fontSizes.h2
+            : "font-size:" + theme.fontSizes.h2};
+        }
+
+        h3 {
+          ${props.theme
+            ? "font-size:" + props.theme.fontSizes.h3
+            : "font-size:" + theme.fontSizes.h3};
+        }
+
+        h4 {
+          ${props.theme
+            ? "font-size:" + props.theme.fontSizes.h4
+            : "font-size:" + theme.fontSizes.h4};
+        }
       `}</style>
     </ThemeContext.Provider>
   );
