@@ -6,7 +6,7 @@
 
 # Pier UI
 
-A customizable UI library for React and Next Applications.
+A customizable UI library starter for React and Next Applications.
 
 ## Documentation
 

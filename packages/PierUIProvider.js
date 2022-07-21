@@ -64,5 +64,5 @@ export default function PierUIProvider(props) {
   );
 }
 
-PierUIProvider.displayName = "Button";
+PierUIProvider.displayName = "PierUIProvider";
 PierUIProvider.propTypes = propTypes;
