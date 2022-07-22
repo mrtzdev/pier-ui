@@ -4,9 +4,10 @@
   </a>
 </p>
 
-# Pier UI
+# Pier UI (beta)
 
 A customizable UI library starter for React and Next Applications.
+This is a beta version. This project is currently in development.
 
 ## Documentation
 
