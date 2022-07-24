@@ -1,6 +1,6 @@
-/// UI Privuder
+/// UI Provider
 
-export { PierUIProvider, useTheme } from "./PierUIProvider";
+export { PierUIProvider } from "./PierUIProvider";
 
 /// Components
 

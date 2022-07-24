@@ -37,7 +37,7 @@ const theme = {
   colors: {
     text: "#333",
     textLight: "#8e8e8e",
-    background: "#fff", /// background body ???
+    background: "#fff",
     link: "#1eaaf1",
     linkHover: "#0d8ecf",
     border: "#e3e3e3",
