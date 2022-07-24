@@ -16,7 +16,7 @@ const propTypes = {
   children: PropTypes.any,
 };
 
-export default function PierUIProvider(props) {
+export function PierUIProvider(props) {
   const customTheme = useTheme();
   const theme = customTheme ? customTheme : defaultTheme;
 
