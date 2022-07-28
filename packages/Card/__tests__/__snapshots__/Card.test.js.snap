@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render empty card correctly 1`] = `
+<Card
+  as="div"
+  variant="flat"
+/>
+`;

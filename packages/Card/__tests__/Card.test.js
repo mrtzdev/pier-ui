@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
@@ -10,7 +11,7 @@ import Card from "../index";
 describe("Card", () => {
   it("should render Card correctly", () => {
     render(<Card></Card>);
-    screen.debug();
+    // screen.debug();
   });
 
   it("Renders with a custom className ", () => {
@@ -21,5 +22,9 @@ describe("Card", () => {
   it("Renders with a className equal to the variant", () => {
     const { container } = render(<Card variant="outlined" />);
     expect(container.firstChild).toHaveClass("outlined");
+  });
+
+  it("should render empty card correctly", () => {
+    expect(<Card />).toMatchSnapshot();
   });
 });

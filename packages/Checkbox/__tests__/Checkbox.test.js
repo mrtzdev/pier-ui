@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { axe, toHaveNoViolations } from "jest-axe";
@@ -30,6 +31,15 @@ describe("Checkbox", () => {
     expect(inputNode).toBeDisabled();
   });
 
+  it("Renders default checked", () => {
+    render(<Checkbox defaultChecked label="defaultChecked" />);
+    const inputNode = screen.getByLabelText("defaultChecked", {
+      selector: "input",
+    });
+
+    expect(inputNode).toBeChecked();
+  });
+
   it("Renders with label", () => {
     const { container } = render(<Checkbox label="testlabel" />);
     const label = screen.getByText(/testLabel/i);
@@ -43,5 +53,9 @@ describe("Checkbox", () => {
     const results = await axe(container);
 
     expect(results).toHaveNoViolations();
+  });
+
+  it("should render empty checkbox correctly", () => {
+    expect(<Checkbox />).toMatchSnapshot();
   });
 });

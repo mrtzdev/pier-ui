@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should render empty checkbox correctly 1`] = `
+<Checkbox
+  as="div"
+  disabled={false}
+  size="base"
+/>
+`;
