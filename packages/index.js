@@ -12,3 +12,7 @@ export { default as Grid } from "./Grid";
 export { default as Input } from "./Input";
 export { default as Checkbox } from "./Checkbox";
 export { default as Radio } from "./Radio";
+
+/// Hooks
+
+export { default as useGetTheme } from "./useGetTheme";
