@@ -123,68 +123,138 @@ const Grid = (props) => {
 
         @media (min-width: ${theme.breakpoints.xs}) {
           .grid.grid-xs {
-            ${xs.rows ? "grid-template-rows:" + xs.rows : ""};
-            ${xs.autoRows ? "grid-auto-rows:" + xs.autoRows : ""};
-            ${xs.rowGap ? " grid-row-gap:" + xs.rowGap : ""};
-            ${xs.columns ? "grid-template-columns:" + xs.columns : ""};
-            ${xs.autoColumns ? "grid-auto-columns:" + xs.autoColumns : ""};
-            ${xs.columnGap ? "grid-column-gap:" + xs.columnGap : ""};
-            ${xs.autoFlow ? "grid-auto-flow:" + xs.autoFlow : ""};
-            ${xs.areas ? "grid-template-areas:" + xs.areas : ""};
-            ${xs.height ? "height:" + xs.height : ""};
+            ${xs.rows
+              ? "grid-template-rows:" + xs.rows
+              : "grid-template-rows: none"};
+            ${xs.autoRows
+              ? "grid-auto-rows:" + xs.autoRows
+              : "grid-auto-rows: auto"};
+            ${xs.rowGap ? "grid-row-gap:" + xs.rowGap : "grid-row-gap: normal"};
+            ${xs.columns
+              ? "grid-template-columns:" + xs.columns
+              : "grid-template-columns: none"};
+            ${xs.autoColumns
+              ? "grid-auto-columns:" + xs.autoColumns
+              : "grid-auto-columns: auto"};
+            ${xs.columnGap
+              ? "grid-column-gap:" + xs.columnGap
+              : "grid-column-gap: normal"};
+            ${xs.autoFlow
+              ? "grid-auto-flow:" + xs.autoFlow
+              : "grid-auto-flow: row"};
+            ${xs.areas
+              ? "grid-template-areas:" + xs.areas
+              : "grid-template-areas: none"};
+            ${xs.height ? "height:" + xs.height : "height: auto"};
           }
         }
         @media (min-width: ${theme.breakpoints.sm}) {
           .grid.grid-sm {
-            ${sm.rows ? "grid-template-rows:" + sm.rows : ""};
-            ${sm.autoRows ? "grid-auto-rows:" + sm.autoRows : ""};
-            ${sm.rowGap ? " grid-row-gap:" + sm.rowGap : ""};
-            ${sm.columns ? "grid-template-columns:" + sm.columns : ""};
-            ${sm.autoColumns ? "grid-auto-columns:" + sm.autoColumns : ""};
-            ${sm.columnGap ? "grid-column-gap:" + sm.columnGap : ""};
-            ${sm.autoFlow ? "grid-auto-flow:" + sm.autoFlow : ""};
-            ${sm.areas ? "grid-template-areas:" + sm.areas : ""};
-            ${sm.height ? "height:" + sm.height : ""};
+            ${sm.rows
+              ? "grid-template-rows:" + sm.rows
+              : "grid-template-rows: none"};
+            ${sm.autoRows
+              ? "grid-auto-rows:" + sm.autoRows
+              : "grid-auto-rows: auto"};
+            ${sm.rowGap ? "grid-row-gap:" + sm.rowGap : "grid-row-gap: normal"};
+            ${sm.columns
+              ? "grid-template-columns:" + sm.columns
+              : "grid-template-columns: none"};
+            ${sm.autoColumns
+              ? "grid-auto-columns:" + sm.autoColumns
+              : "grid-auto-columns: auto"};
+            ${sm.columnGap
+              ? "grid-column-gap:" + sm.columnGap
+              : "grid-column-gap: normal"};
+            ${sm.autoFlow
+              ? "grid-auto-flow:" + sm.autoFlow
+              : "grid-auto-flow: row"};
+            ${sm.areas
+              ? "grid-template-areas:" + sm.areas
+              : "grid-template-areas: none"};
+            ${sm.height ? "height:" + sm.height : "height: auto"};
           }
         }
 
         @media (min-width: ${theme.breakpoints.md}) {
           .grid.grid-md {
-            ${md.rows ? "grid-template-rows:" + md.rows : ""};
-            ${md.autoRows ? "grid-auto-rows:" + md.autoRows : ""};
-            ${md.rowGap ? " grid-row-gap:" + md.rowGap : ""};
-            ${md.columns ? "grid-template-columns:" + md.columns : ""};
-            ${md.autoColumns ? "grid-auto-columns:" + md.autoColumns : ""};
-            ${md.columnGap ? "grid-column-gap:" + md.columnGap : ""};
-            ${md.autoFlow ? "grid-auto-flow:" + md.autoFlow : ""};
-            ${md.areas ? "grid-template-areas:" + md.areas : ""};
-            ${md.height ? "height:" + md.height : ""};
+            ${md.rows
+              ? "grid-template-rows:" + md.rows
+              : "grid-template-rows: none"};
+            ${md.autoRows
+              ? "grid-auto-rows:" + md.autoRows
+              : "grid-auto-rows: auto"};
+            ${md.rowGap ? "grid-row-gap:" + md.rowGap : "grid-row-gap: normal"};
+            ${md.columns
+              ? "grid-template-columns:" + md.columns
+              : "grid-template-columns: none"};
+            ${md.autoColumns
+              ? "grid-auto-columns:" + md.autoColumns
+              : "grid-auto-columns: auto"};
+            ${md.columnGap
+              ? "grid-column-gap:" + md.columnGap
+              : "grid-column-gap: normal"};
+            ${md.autoFlow
+              ? "grid-auto-flow:" + md.autoFlow
+              : "grid-auto-flow: row"};
+            ${md.areas
+              ? "grid-template-areas:" + md.areas
+              : "grid-template-areas: none"};
+            ${md.height ? "height:" + md.height : "height: auto"};
           }
         }
         @media (min-width: ${theme.breakpoints.lg}) {
           .grid.grid-lg {
-            ${lg.rows ? "grid-template-rows:" + lg.rows : ""};
-            ${lg.autoRows ? "grid-auto-rows:" + lg.autoRows : ""};
-            ${lg.rowGap ? " grid-row-gap:" + lg.rowGap : ""};
-            ${lg.columns ? "grid-template-columns:" + lg.columns : ""};
-            ${lg.autoColumns ? "grid-auto-columns:" + lg.autoColumns : ""};
-            ${lg.columnGap ? "grid-column-gap:" + lg.columnGap : ""};
-            ${lg.autoFlow ? "grid-auto-flow:" + lg.autoFlow : ""};
-            ${lg.areas ? "grid-template-areas:" + lg.areas : ""};
-            ${lg.height ? "height:" + lg.height : ""};
+            ${lg.rows
+              ? "grid-template-rows:" + lg.rows
+              : "grid-template-rows: none"};
+            ${lg.autoRows
+              ? "grid-auto-rows:" + lg.autoRows
+              : "grid-auto-rows: auto"};
+            ${lg.rowGap ? "grid-row-gap:" + lg.rowGap : "grid-row-gap: normal"};
+            ${lg.columns
+              ? "grid-template-columns:" + lg.columns
+              : "grid-template-columns: none"};
+            ${lg.autoColumns
+              ? "grid-auto-columns:" + lg.autoColumns
+              : "grid-auto-columns: auto"};
+            ${lg.columnGap
+              ? "grid-column-gap:" + lg.columnGap
+              : "grid-column-gap: normal"};
+            ${lg.autoFlow
+              ? "grid-auto-flow:" + lg.autoFlow
+              : "grid-auto-flow: row"};
+            ${lg.areas
+              ? "grid-template-areas:" + lg.areas
+              : "grid-template-areas: none"};
+            ${lg.height ? "height:" + lg.height : "height: auto"};
           }
         }
         @media (min-width: ${theme.breakpoints.xl}) {
           .grid.grid-xl {
-            ${xl.rows ? "grid-template-rows:" + xl.rows : ""};
-            ${xl.autoRows ? "grid-auto-rows:" + xl.autoRows : ""};
-            ${xl.rowGap ? " grid-row-gap:" + xl.rowGap : ""};
-            ${xl.columns ? "grid-template-columns:" + xl.columns : ""};
-            ${xl.autoColumns ? "grid-auto-columns:" + xl.autoColumns : ""};
-            ${xl.columnGap ? "grid-column-gap:" + xl.columnGap : ""};
-            ${xl.autoFlow ? "grid-auto-flow:" + xl.autoFlow : ""};
-            ${xl.areas ? "grid-template-areas:" + xl.areas : ""};
-            ${xl.height ? "height:" + xl.height : ""};
+            ${xl.rows
+              ? "grid-template-rows:" + xl.rows
+              : "grid-template-rows: none"};
+            ${xl.autoRows
+              ? "grid-auto-rows:" + xl.autoRows
+              : "grid-auto-rows: auto"};
+            ${xl.rowGap ? "grid-row-gap:" + xl.rowGap : "grid-row-gap: normal"};
+            ${xl.columns
+              ? "grid-template-columns:" + xl.columns
+              : "grid-template-columns: none"};
+            ${xl.autoColumns
+              ? "grid-auto-columns:" + xl.autoColumns
+              : "grid-auto-columns: auto"};
+            ${xl.columnGap
+              ? "grid-column-gap:" + xl.columnGap
+              : "grid-column-gap: normal"};
+            ${xl.autoFlow
+              ? "grid-auto-flow:" + xl.autoFlow
+              : "grid-auto-flow: row"};
+            ${xl.areas
+              ? "grid-template-areas:" + xl.areas
+              : "grid-template-areas: none"};
+            ${xl.height ? "height:" + xl.height : "height: auto"};
           }
         }
       `}</style>

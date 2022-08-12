@@ -59,7 +59,7 @@ const Button = forwardRef((props, ref) => {
           size && `${size}`,
           disabled && `${disabled}`
         )}
-        disabled={as === "button" && disabled ? true : false} /// ad disabled attr only to button
+        disabled={as === "button" && disabled ? true : false} /// add disabled attr only to button
         ref={ref}
       >
         {children}

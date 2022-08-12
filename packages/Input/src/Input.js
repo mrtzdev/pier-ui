@@ -56,7 +56,7 @@ const Input = forwardRef((props, ref) => {
     width,
     disabled,
     //isInvalid, //// isInvalid is not added yet: tests with form
-    color, //// props: color = insgesamt color auch für filled,  focusColor extra invalid color ??? borderColor
+    color,
     focusColor,
 
     children,
