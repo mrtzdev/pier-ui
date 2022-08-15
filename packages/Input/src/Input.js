@@ -20,7 +20,7 @@ const propTypes = {
   autoComplete: PropTypes.string,
   color: PropTypes.string,
   focusColor: PropTypes.string,
-  children: PropTypes.any,
+  children: PropTypes.node,
   onChange: PropTypes.func,
   type: PropTypes.string,
   value: PropTypes.any,

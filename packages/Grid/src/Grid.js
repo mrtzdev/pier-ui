@@ -20,7 +20,7 @@ const propTypes = {
   className: PropTypes.string,
   bgColor: PropTypes.string,
   as: PropTypes.string,
-  children: PropTypes.any,
+  children: PropTypes.node,
   columns: PropTypes.string,
   columnGap: PropTypes.string,
   autoColumns: PropTypes.string,

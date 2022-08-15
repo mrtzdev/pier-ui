@@ -36,6 +36,8 @@ const RadioGroup = forwardRef((props, ref) => {
     onChange(selected);
   };
 
+  /// todo add key down up
+
   useEffect(() => {
     setSelected(value);
   }, [value]);
@@ -51,6 +53,9 @@ const RadioGroup = forwardRef((props, ref) => {
           React.cloneElement(childElement, {
             ref: (ref) => (childrenRef.current[index] = ref),
             onChange: () => selectItem(childElement.props.value),
+            onKeyDown: (e) => {
+              e.preventDefault();
+            },
             isChecked: childElement.props.value == selected ? true : false,
             checked: childElement.props.value == selected ? true : false,
           })

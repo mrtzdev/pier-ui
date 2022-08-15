@@ -21,7 +21,7 @@ const propTypes = {
   width: PropTypes.string,
   disabled: PropTypes.bool,
   as: PropTypes.string,
-  children: PropTypes.any,
+  children: PropTypes.node,
 };
 
 const defaultProps = {

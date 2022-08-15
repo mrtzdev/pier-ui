@@ -7,7 +7,7 @@ import { useTheme } from "../../PierUIProvider";
 const propTypes = {
   className: PropTypes.string,
   as: PropTypes.string,
-  children: PropTypes.any,
+  children: PropTypes.node,
   maxWidth: PropTypes.string,
 };
 

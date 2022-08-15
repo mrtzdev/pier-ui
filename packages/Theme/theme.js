@@ -50,7 +50,7 @@ const theme = {
     third: "#35e97f", //third: "#63EE9C",
     thirdHover: "#29d872",
     grey: "#bdc3ca", /// #D3D7DC
-    greyLight: "#EEEEEE",
+    greyLight: "#edf2f7",
     greyHover: "#EEEEEE",
   },
 

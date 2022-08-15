@@ -8,7 +8,7 @@ const propTypes = {
   variant: PropTypes.oneOf(["flat", "outlined", "shadow"]),
   className: PropTypes.string,
   as: PropTypes.string,
-  children: PropTypes.any,
+  children: PropTypes.node,
   maxWidth: PropTypes.string,
   borderRadius: PropTypes.string,
 };
