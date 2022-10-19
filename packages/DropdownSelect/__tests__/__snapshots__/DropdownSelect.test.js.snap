@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown Select should render DropdownSelect  correctly 1`] = `
+<DropdownSelect
+  disabled={false}
+  multiple={false}
+  options={
+    Array [
+      Object {
+        "label": "Grapes",
+        "value": "grapes",
+      },
+      Object {
+        "label": "Mango",
+        "value": "mango",
+      },
+      Object {
+        "label": "Strawberry",
+        "value": "strawberry",
+      },
+    ]
+  }
+  required={false}
+  size="base"
+  value={
+    Object {
+      "label": "Grapes",
+      "value": "grapes",
+    }
+  }
+  variant="outline"
+  width="auto"
+/>
+`;

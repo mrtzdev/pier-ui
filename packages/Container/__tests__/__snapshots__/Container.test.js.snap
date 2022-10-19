@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container should render empty Container correctly 1`] = `
+<Container
+  as="div"
+/>
+`;

@@ -128,4 +128,17 @@ describe("Dropdown Select", () => {
 
     expect(results).toHaveNoViolations();
   });
+
+  it("should render DropdownSelect  correctly", () => {
+    expect(
+      <DropdownSelect
+        options={[
+          { label: "Grapes", value: "grapes" },
+          { label: "Mango", value: "mango" },
+          { label: "Strawberry", value: "strawberry" },
+        ]}
+        value={{ label: "Grapes", value: "grapes" }}
+      />
+    ).toMatchSnapshot();
+  });
 });

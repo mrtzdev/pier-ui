@@ -20,4 +20,8 @@ describe("Container", () => {
     );
     expect(container.firstChild).toHaveClass("custom-class");
   });
+
+  it("should render empty Container correctly", () => {
+    expect(<Container />).toMatchSnapshot();
+  });
 });
