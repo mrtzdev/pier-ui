@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import defaultTheme from "../../Theme/theme";
@@ -29,6 +29,8 @@ const IconChevron = () => {
 const propTypes = {
   value: PropTypes.array.isRequired,
   options: PropTypes.array.isRequired,
+  label: PropTypes.string,
+  floatingLabel: PropTypes.bool,
   className: PropTypes.string,
   size: PropTypes.string,
   width: PropTypes.string,
@@ -40,6 +42,7 @@ const propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   closeOnChange: PropTypes.bool,
+  children: PropTypes.node,
 };
 
 const defaultProps = {
@@ -78,9 +81,10 @@ const DropdownSelectMultiple = (props) => {
   const theme = customTheme ? customTheme : defaultTheme;
 
   const [visible, setVisible] = useState(false);
-  const [selected, setSelected] = useState([]);
 
   const modalRef = useOnClickOutside(() => setVisible(false));
+
+  const selected = value ? value : [];
 
   const selectItem = (selectedValue) => {
     const findItem = () => {
@@ -88,7 +92,7 @@ const DropdownSelectMultiple = (props) => {
       return item;
     };
 
-    /// Check if an Array contains  Object
+    /// Check if an Array contains Object
     const index = selected.findIndex((element) => {
       if (element.value === findItem().value) {
         return true;
@@ -115,10 +119,6 @@ const DropdownSelectMultiple = (props) => {
       return el.value === v;
     });
   };
-
-  useMemo(() => {
-    setSelected(value);
-  }, [value]);
 
   return (
     <>
