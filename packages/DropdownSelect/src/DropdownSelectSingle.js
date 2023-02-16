@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import defaultTheme from "../../Theme/theme";
@@ -29,6 +29,8 @@ const IconChevron = () => {
 const propTypes = {
   value: PropTypes.object.isRequired,
   options: PropTypes.array.isRequired,
+  label: PropTypes.string,
+  floatingLabel: PropTypes.bool,
   className: PropTypes.string,
   size: PropTypes.string,
   width: PropTypes.string,
@@ -40,6 +42,7 @@ const propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   closeOnChange: PropTypes.bool,
+  children: PropTypes.node,
 };
 
 const defaultProps = {
@@ -54,7 +57,6 @@ const defaultProps = {
 const DropdownSelectSingle = (props) => {
   const {
     className,
-    list,
     options,
     value,
     label,
@@ -70,7 +72,7 @@ const DropdownSelectSingle = (props) => {
     focusColor,
     size,
     children,
-    multiple,
+
     ...restProps
   } = props;
 
@@ -80,7 +82,7 @@ const DropdownSelectSingle = (props) => {
   const theme = customTheme ? customTheme : defaultTheme;
 
   const [visible, setVisible] = useState(false);
-  const [selected, setSelected] = useState({});
+  //const [selected, setSelected] = useState({});
 
   const modalRef = useOnClickOutside(() => setVisible(false));
 
@@ -95,9 +97,7 @@ const DropdownSelectSingle = (props) => {
     if (closeOnChange) setVisible(false);
   };
 
-  useMemo(() => {
-    setSelected(value);
-  }, [value]);
+  const selected = value ? value : {};
 
   return (
     <>
