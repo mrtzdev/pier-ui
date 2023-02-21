@@ -1,9 +1,10 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef } from "react";
 
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import defaultTheme from "../../Theme/theme";
 import { useTheme } from "../../PierUIProvider";
+import { useRadioGroupContext } from "./RadioGroupContext";
 
 const propTypes = {
   label: PropTypes.string,
@@ -19,6 +20,7 @@ const propTypes = {
   value: PropTypes.any,
   variant: PropTypes.string,
   onChange: PropTypes.func,
+  defaultValue: PropTypes.string,
 };
 
 const defaultProps = {
@@ -36,24 +38,20 @@ const Radio = forwardRef((props, ref) => {
     disabled,
     required,
     as,
-    onChange,
     value,
     label,
-    isChecked,
-    defaultChecked,
+
     ...restProps
   } = props;
   const Component = as;
 
   const customTheme = useTheme();
   const theme = customTheme ? customTheme : defaultTheme;
+  const context = useRadioGroupContext();
 
-  const [isCheckedUncontrolled, setIsCheckedUncontrolled] =
-    useState(defaultChecked);
-
-  const hasChanged = () => {
-    setIsCheckedUncontrolled(!isCheckedUncontrolled);
-  };
+  const [selected, onChange, defaultValue] = context ? context : ["", ""];
+  const checked = !defaultValue ? value === selected : undefined;
+  const defaultChecked = defaultValue ? value === defaultValue : undefined;
 
   return (
     <>
@@ -71,24 +69,17 @@ const Radio = forwardRef((props, ref) => {
         <label className="radio-label">
           <input
             className="radio-input"
-            type="radio"
-            {...(onChange
-              ? { onChange }
-              : {
-                  onChange: () => {
-                    hasChanged();
-                  },
-                })}
             value={value}
-            {...(defaultChecked ? { defaultChecked } : {})}
+            checked={checked}
+            defaultChecked={defaultChecked}
+            type="radio"
+            onChange={({ target }) => onChange(target.value)}
             disabled={disabled ? true : false}
             required={required ? true : false}
             ref={ref}
           />
           <span
-            className={`radio ${isChecked ? "radio--checked" : ""} ${
-              isCheckedUncontrolled ? "radio--checked" : ""
-            } `}
+            className={`radio ${checked ? "radio--checked" : ""}  `}
             aria-hidden="true"
           ></span>
           <span className="radio-label-text">{label} </span>
@@ -144,7 +135,7 @@ const Radio = forwardRef((props, ref) => {
           border-radius: 50%;
         }
 
-        .radio.radio--checked:before {
+        .radio-input[type="radio"]:checked + span.radio:before {
           ${color
             ? "border: 1px solid" + color
             : "border: 1px solid" + theme.colors.grey};

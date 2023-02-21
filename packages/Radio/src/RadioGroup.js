@@ -1,7 +1,11 @@
-import React, { useEffect, useRef, forwardRef, useState } from "react";
+import React, { forwardRef } from "react";
 
 import classNames from "classnames";
 import PropTypes from "prop-types";
+
+import { RadioGroupContext } from "./RadioGroupContext";
+
+/// todo: add defaultValue for uncontrolled componennt.
 
 const propTypes = {
   orientation: PropTypes.string,
@@ -9,7 +13,8 @@ const propTypes = {
   children: PropTypes.any,
   onChange: PropTypes.func,
   as: PropTypes.string,
-  value: PropTypes.any,
+  value: PropTypes.string,
+  defaultValue: PropTypes.string,
 };
 
 const defaultProps = {
@@ -25,22 +30,18 @@ const RadioGroup = forwardRef((props, ref) => {
     onChange,
     value,
     orientation,
+    defaultValue,
     ...restProps
   } = props;
   const Component = as;
-  const [selected, setSelected] = useState("");
 
-  const childrenRef = useRef([]);
+  const isUncontrolled = value === undefined ? true : false;
+  let selected = value;
 
-  const selectItem = (selected) => {
-    onChange(selected);
-  };
-
-  /// todo add key down up
-
-  useEffect(() => {
-    setSelected(value);
-  }, [value]);
+  function handleOnChange(value) {
+    selected = value;
+    if (!isUncontrolled) onChange(value);
+  }
 
   return (
     <>
@@ -49,17 +50,11 @@ const RadioGroup = forwardRef((props, ref) => {
         ref={ref}
         {...restProps}
       >
-        {React.Children.map(children, (childElement, index) =>
-          React.cloneElement(childElement, {
-            ref: (ref) => (childrenRef.current[index] = ref),
-            onChange: () => selectItem(childElement.props.value),
-            onKeyDown: (e) => {
-              e.preventDefault();
-            },
-            isChecked: childElement.props.value == selected ? true : false,
-            checked: childElement.props.value == selected ? true : false,
-          })
-        )}
+        <RadioGroupContext.Provider
+          value={[selected, handleOnChange, defaultValue]}
+        >
+          {children}
+        </RadioGroupContext.Provider>
       </Component>
 
       <style jsx>{`
