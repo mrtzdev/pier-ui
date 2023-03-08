@@ -4,7 +4,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import copy from "rollup-plugin-copy";
 import pkg from "./package.json";
 import replace from "rollup-plugin-replace";
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 
 const env = process.env.NODE_ENV;
 
